@@ -19,3 +19,9 @@ Web技術入門の写経
 ブラウザで
 
 `http://localhost:8080/hello.html`
+
+### Tiny ToDo01 の場合
+
+ブラウザで
+
+`http://localhost:8080/todo`

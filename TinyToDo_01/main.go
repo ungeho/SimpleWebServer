@@ -22,6 +22,8 @@ func handleTodo(w http.ResponseWriter, r *http.Request) {
 	// 最終的なHTMLを生成してレスポンスとして返す。
 
 	// ブランク識別子でエラーを無視
+	// t, _ := template.ParseFiles("templates/todo.html")
+
 	t, err := template.ParseFiles("templates/todo.html")
 	if err != nil {
 		http.Error(w, "テンプレート読み込みエラー: "+err.Error(), http.StatusInternalServerError)

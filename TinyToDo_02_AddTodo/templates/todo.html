@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Tiny ToDo</title>
+    <link rel="stylesheet" href="/static/todo.css">
+</head>
+
+<body>
+    <header>
+        <h1>Tiny Todo</h1>
+    </header>
+    <main>
+        <ul class="todo-list">
+
+            <!-- form要素のaction属性で指定したaddというパスに対してPOSTメソッドで送信 -->
+            <form method="post" action="add">
+                <!-- inputで受け取ったTodo項目をtodoという名前のﾊﾟﾗﾒｰﾀｰに格納 -->
+                <input type="text" name="todo" placeholder="Add a new todo">
+                <button type="submit">Add</button>
+            </form>
+
+            <!-- 二重の中括弧の中にアクションと呼ばれる指示を記述 -->
+            <!-- range . と end　は対になっている。　挟まれる内容を繰り返し処理。 -->
+            <!-- . はテンプレートに与えられたデータ（変数の内容）　ここではtodoList変数を渡していた。 -->
+            <!-- この為、range . は todoListに格納された各要素に対して繰り返し処理する指示になる。 -->
+            {{range . }}
+            <li class="todo-item">
+                <div class="todo-item-left">
+                    <input type="checkbox">
+                    <label>{{ . }}</label>
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+    </main>
+</body>
+</html>
